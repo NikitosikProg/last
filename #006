@@ -1,0 +1,16 @@
+n = int(input())
+s = input().split()
+currentSum = 0
+counter = 0
+maxi = -1
+for i in s:
+    currentSum += int(i)
+    if i == '0':
+        counter += 1
+        maxi = max(counter, maxi)
+    elif counter > 0:
+        counter -= 1
+    else:
+        counter = 0
+maxi = max(counter, maxi)
+print(currentSum + maxi)
